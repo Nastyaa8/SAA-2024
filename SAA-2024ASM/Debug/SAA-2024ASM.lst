@@ -1,0 +1,359 @@
+Microsoft (R) Macro Assembler Version 14.37.32824.0	    12/18/24 11:27:46
+SAA-2024ASM.asm						     Page 1 - 1
+
+
+				.586
+					.model flat, stdcall
+					includelib libucrt.lib
+					includelib kernel32.lib
+					includelib C:/Users/Hasee/Desktop/кп/SAA-2024-master/SAA-2024-master/SAA-2024/Debug/SAA-2024LIB.lib
+					ExitProcess PROTO :DWORD
+
+
+					GetHours PROTO :DWORD 
+					GetMonth PROTO :DWORD 
+					GetMinutes PROTO :DWORD 
+					GetDate PROTO :DWORD 
+				outputuint PROTO :DWORD
+				outputchar PROTO :BYTE
+				outputstr PROTO :DWORD
+
+				.stack 4096
+ 00000000			.const
+ 00000000 CF EE EF FB F2	divideOnZeroExeption BYTE "Попытка деления на ноль.", 0  ;STR, для вывода ошибки при делении на ноль
+	   EA E0 20 E4 E5
+	   EB E5 ED E8 FF
+	   20 ED E0 20 ED
+	   EE EB FC 2E 00
+ 00000019 00000001			FindFactor$LEX1 DWORD 1 ;INT
+ 0000001D 71				main$LEX4 BYTE 'q' ;CHR
+ 0000001E 53 79 6D 62 6F		main$LEX5 BYTE "Symbol", 0  ;STR
+	   6C 00
+ 00000025 46 61 63 74 6F		main$LEX6 BYTE "Factorial of number 5", 0  ;STR
+	   72 69 61 6C 20
+	   6F 66 20 6E 75
+	   6D 62 65 72 20
+	   35 00
+ 0000003B 00000005			main$LEX7 DWORD 5 ;INT
+ 0000003F 4E 75 6D 62 65		main$LEX8 BYTE "Number to be circilar shifted:", 0  ;STR
+	   72 20 74 6F 20
+	   62 65 20 63 69
+	   72 63 69 6C 61
+	   72 20 73 68 69
+	   66 74 65 64 3A
+	   00
+ 0000005E 00000020			main$LEX9 DWORD 32 ;INT
+ 00000062 00000003			main$LEX10 DWORD 3 ;INT
+ 00000066 33 32 3C 3C 33		main$LEX12 BYTE "32<<3:", 0  ;STR
+	   3A 00
+ 0000006D 33 32 3E 3E 31		main$LEX13 BYTE "32>>1:", 0  ;STR
+	   3A 00
+ 00000074 00000006			main$LEX14 DWORD 6 ;INT
+ 00000078 49 66 20 63 6F		main$LEX16 BYTE "If construction works", 0  ;STR
+	   6E 73 74 72 75
+	   63 74 69 6F 6E
+	   20 77 6F 72 6B
+	   73 00
+ 0000008E 49 66 20 63 6F		main$LEX19 BYTE "If construction not works", 0  ;STR
+	   6E 73 74 72 75
+	   63 74 69 6F 6E
+	   20 6E 6F 74 20
+	   77 6F 72 6B 73
+	   00
+ 000000A8 48 6F 75 72 73		main$LEX24 BYTE "Hours:", 0  ;STR
+	   3A 00
+ 000000AF 4D 69 6E 75 74		main$LEX25 BYTE "Minutes:", 0  ;STR
+	   65 73 3A 00
+ 000000B8 44 61 74 65 3A		main$LEX26 BYTE "Date:", 0  ;STR
+	   00
+ 000000BE 4D 6F 6E 74 68		main$LEX27 BYTE "Month:", 0  ;STR
+	   3A 00
+ 000000C5 00000000			main$LEX28 DWORD 0 ;INT
+ 00000000			.data
+ 00000000 00000000			FindFactoranswer DWORD 0 ;INT
+ 00000004 00				mainsymb BYTE 0 ;CHR
+ 00000005 00000000			mainnumber DWORD 0 ;INT
+ 00000009 00000000			maindemo DWORD 0 ;INT
+ 0000000D 00000000			maindemo1 DWORD 0 ;INT
+ 00000011 00000000			maindemo2 DWORD 0 ;INT
+ 00000015 00000000			mainsum DWORD 0; INT
+ 00000019 00000000			mainnumber1 DWORD 0 ;INT
+ 0000001D 00000000			mainnumber2 DWORD 0 ;INT
+ 00000021 00000000			mainnumber3 DWORD 0 ;INT
+ 00000025 00000000			mainnumber4 DWORD 0 ;INT
+
+ 00000000			.code
+ 00000000			$FindFactor PROC uses ebx ecx edi esi ,	FindFactora: DWORD 
+				; String #3 :ivl
+ 00000007  FF 35 00000019 R	push FindFactor$LEX1
+ 0000000D  8F 05 00000000 R	pop FindFactoranswer
+
+ 00000013			While17Start: 
+ 00000013  8B 45 08		mov eax, FindFactora
+ 00000016  8B 1D 00000019 R	mov ebx, FindFactor$LEX1
+ 0000001C  3B C3		cmp eax, ebx
+ 0000001E  7C 27		jl While17End
+
+				; String #6 :iviiv
+ 00000020  FF 35 00000000 R	push FindFactoranswer
+ 00000026  FF 75 08		push FindFactora
+ 00000029  5B			pop ebx
+ 0000002A  58			pop eax
+ 0000002B  F7 E3		mul ebx
+ 0000002D  50			push eax
+ 0000002E  8F 05 00000000 R	pop FindFactoranswer
+
+				; String #7 :ivilv
+ 00000034  FF 75 08		push FindFactora
+ 00000037  FF 35 00000019 R	push FindFactor$LEX1
+ 0000003D  5B			pop ebx
+ 0000003E  58			pop eax
+ 0000003F  2B C3		sub eax, ebx
+ 00000041  50			push eax
+ 00000042  8F 45 08		pop FindFactora
+ 00000045  EB CC		jmp While17Start
+ 00000047			While17End: 
+
+ 00000047  A1 00000000 R	mov eax, FindFactoranswer
+				ret
+ 00000054			$FindFactor ENDP
+
+ 00000054			main PROC
+
+				; String #21 :ivl
+ 00000054  0F B6 05		movzx eax, main$LEX4
+	   0000001D R
+ 0000005B  50			push eax 
+ 0000005C  58			pop eax
+ 0000005D  A2 00000004 R	mov mainsymb, al
+
+ 00000062  68 0000001E R	push offset main$LEX5
+ 00000067  E8 00000000 E	CALL outputstr
+ 0000006C  50			push eax
+ 0000006D  0F B6 05		movzx eax, mainsymb
+	   00000004 R
+ 00000074  50			push eax
+ 00000075  E8 00000000 E	CALL outputchar
+ 0000007A  58			pop eax
+
+
+ 0000007B  68 00000025 R	push offset main$LEX6
+ 00000080  E8 00000000 E	CALL outputstr
+
+				; String #27 :ivil@1
+				invoke $FindFactor, main$LEX7
+ 00000090  50			push eax ;результат функции
+ 00000091  8F 05 00000005 R	pop mainnumber
+ 00000097  A1 00000005 R	mov eax, mainnumber
+
+ 0000009C  E8 00000000 E	CALL outputuint
+ 000000A1  FF 35 00000005 R	push mainnumber
+ 000000A7  E8 00000000 E	CALL outputuint
+
+ 000000AC  68 0000003F R	push offset main$LEX8
+ 000000B1  E8 00000000 E	CALL outputstr
+
+				; String #32 :ivl
+ 000000B6  FF 35 0000005E R	push main$LEX9
+ 000000BC  8F 05 00000009 R	pop maindemo
+
+ 000000C2  FF 35 00000009 R	push maindemo
+ 000000C8  E8 00000000 E	CALL outputuint
+
+				; String #35 :ivilv
+ 000000CD  FF 35 00000009 R	push maindemo
+ 000000D3  FF 35 00000062 R	push main$LEX10
+ 000000D9  5B			pop ebx
+ 000000DA  58			pop eax
+ 000000DB  51			push ecx ; сохраняем данные регистра ecx
+ 000000DC  8B CB		mov ecx, ebx
+ 000000DE  D3 E0		SHL eax, cl
+ 000000E0  59			pop ecx
+ 000000E1  50			push eax
+ 000000E2  8F 05 0000000D R	pop maindemo1
+
+				; String #37 :ivilv
+ 000000E8  FF 35 00000009 R	push maindemo
+ 000000EE  FF 35 00000019 R	push FindFactor$LEX1
+ 000000F4  5B			pop ebx
+ 000000F5  58			pop eax
+ 000000F6  51			push ecx ; сохраняем данные регистра ecx
+ 000000F7  8B CB		mov ecx, ebx
+ 000000F9  D3 E8		SHR eax, cl
+ 000000FB  59			pop ecx
+ 000000FC  50			push eax
+ 000000FD  8F 05 00000011 R	pop maindemo2
+
+ 00000103  68 00000066 R	push offset main$LEX12
+ 00000108  E8 00000000 E	CALL outputstr
+
+ 0000010D  FF 35 0000000D R	push maindemo1
+ 00000113  E8 00000000 E	CALL outputuint
+
+ 00000118  68 0000006D R	push offset main$LEX13
+ 0000011D  E8 00000000 E	CALL outputstr
+
+ 00000122  FF 35 00000011 R	push maindemo2
+ 00000128  E8 00000000 E	CALL outputuint
+
+ 0000012D			If158Start: 
+ 0000012D  A1 00000074 R	mov eax, main$LEX14
+ 00000132  8B 1D 0000003B R	mov ebx, main$LEX7
+ 00000138  3B C3		cmp eax, ebx
+ 0000013A  7C 0A		jl If158End
+
+ 0000013C  68 00000078 R	push offset main$LEX16
+ 00000141  E8 00000000 E	CALL outputstr
+ 00000146			If158End: 
+
+ 00000146			If169Start: 
+ 00000146  A1 0000003B R	mov eax, main$LEX7
+ 0000014B  8B 1D 00000074 R	mov ebx, main$LEX14
+ 00000151  3B C3		cmp eax, ebx
+ 00000153  7C 0A		jl If169End
+
+ 00000155  68 0000008E R	push offset main$LEX19
+ 0000015A  E8 00000000 E	CALL outputstr
+ 0000015F			If169End: 
+
+				; String #56 :ivil@1
+				invoke GetHours, FindFactor$LEX1
+ 0000016A  50			push eax ;результат функции
+ 0000016B  8F 05 00000019 R	pop mainnumber1
+
+				; String #57 :ivil@1
+				invoke GetMinutes, FindFactor$LEX1
+ 0000017C  50			push eax ;результат функции
+ 0000017D  8F 05 0000001D R	pop mainnumber2
+
+				; String #58 :ivil@1
+				invoke GetDate, FindFactor$LEX1
+ 0000018E  50			push eax ;результат функции
+ 0000018F  8F 05 00000021 R	pop mainnumber3
+
+				; String #59 :ivil@1
+				invoke GetMonth, FindFactor$LEX1
+ 000001A0  50			push eax ;результат функции
+ 000001A1  8F 05 00000025 R	pop mainnumber4
+
+ 000001A7  68 000000A8 R	push offset main$LEX24
+ 000001AC  E8 00000000 E	CALL outputstr
+
+ 000001B1  FF 35 00000019 R	push mainnumber1
+ 000001B7  E8 00000000 E	CALL outputuint
+
+ 000001BC  68 000000AF R	push offset main$LEX25
+ 000001C1  E8 00000000 E	CALL outputstr
+
+ 000001C6  FF 35 0000001D R	push mainnumber2
+ 000001CC  E8 00000000 E	CALL outputuint
+
+ 000001D1  68 000000B8 R	push offset main$LEX26
+ 000001D6  E8 00000000 E	CALL outputstr
+
+ 000001DB  FF 35 00000021 R	push mainnumber3
+ 000001E1  E8 00000000 E	CALL outputuint
+
+ 000001E6  68 000000BE R	push offset main$LEX27
+ 000001EB  E8 00000000 E	CALL outputstr
+
+ 000001F0  FF 35 00000025 R	push mainnumber4
+ 000001F6  E8 00000000 E	CALL outputuint
+
+ 000001FB  A1 000000C5 R	mov eax, main$LEX28
+ 00000200  EB 0A			jmp endPoint
+ 00000202				div_by_0:
+ 00000202  68 00000000 R		push offset divideOnZeroExeption
+ 00000207  E8 00000000 E	CALL outputstr
+ 0000020C			endPoint:
+					invoke		ExitProcess, eax
+ 00000212			main ENDP
+				end main
+Microsoft (R) Macro Assembler Version 14.37.32824.0	    12/18/24 11:27:46
+SAA-2024ASM.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CONST  . . . . . . . . . . . . .	32 Bit	 000000C9 Para	  Public  'CONST'	 ReadOnly
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000029 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000212 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+$FindFactor  . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000054 Public STDCALL
+  FindFactora  . . . . . . . . .	DWord	 bp + 00000008
+  While17Start . . . . . . . . .	L Near	 00000013 _TEXT	
+  While17End . . . . . . . . . .	L Near	 00000047 _TEXT	
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+GetDate  . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+GetHours . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+GetMinutes . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+GetMonth . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000054 _TEXT	Length= 000001BE Public STDCALL
+  If158Start . . . . . . . . . .	L Near	 0000012D _TEXT	
+  If158End . . . . . . . . . . .	L Near	 00000146 _TEXT	
+  If169Start . . . . . . . . . .	L Near	 00000146 _TEXT	
+  If169End . . . . . . . . . . .	L Near	 0000015F _TEXT	
+  div_by_0 . . . . . . . . . . .	L Near	 00000202 _TEXT	
+  endPoint . . . . . . . . . . .	L Near	 0000020C _TEXT	
+outputchar . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+outputstr  . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+outputuint . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+FindFactor$LEX1  . . . . . . . .	DWord	 00000019 CONST	
+FindFactoranswer . . . . . . . .	DWord	 00000000 _DATA	
+divideOnZeroExeption . . . . . .	Byte	 00000000 CONST	
+main$LEX10 . . . . . . . . . . .	DWord	 00000062 CONST	
+main$LEX12 . . . . . . . . . . .	Byte	 00000066 CONST	
+main$LEX13 . . . . . . . . . . .	Byte	 0000006D CONST	
+main$LEX14 . . . . . . . . . . .	DWord	 00000074 CONST	
+main$LEX16 . . . . . . . . . . .	Byte	 00000078 CONST	
+main$LEX19 . . . . . . . . . . .	Byte	 0000008E CONST	
+main$LEX24 . . . . . . . . . . .	Byte	 000000A8 CONST	
+main$LEX25 . . . . . . . . . . .	Byte	 000000AF CONST	
+main$LEX26 . . . . . . . . . . .	Byte	 000000B8 CONST	
+main$LEX27 . . . . . . . . . . .	Byte	 000000BE CONST	
+main$LEX28 . . . . . . . . . . .	DWord	 000000C5 CONST	
+main$LEX4  . . . . . . . . . . .	Byte	 0000001D CONST	
+main$LEX5  . . . . . . . . . . .	Byte	 0000001E CONST	
+main$LEX6  . . . . . . . . . . .	Byte	 00000025 CONST	
+main$LEX7  . . . . . . . . . . .	DWord	 0000003B CONST	
+main$LEX8  . . . . . . . . . . .	Byte	 0000003F CONST	
+main$LEX9  . . . . . . . . . . .	DWord	 0000005E CONST	
+maindemo1  . . . . . . . . . . .	DWord	 0000000D _DATA	
+maindemo2  . . . . . . . . . . .	DWord	 00000011 _DATA	
+maindemo . . . . . . . . . . . .	DWord	 00000009 _DATA	
+mainnumber1  . . . . . . . . . .	DWord	 00000019 _DATA	
+mainnumber2  . . . . . . . . . .	DWord	 0000001D _DATA	
+mainnumber3  . . . . . . . . . .	DWord	 00000021 _DATA	
+mainnumber4  . . . . . . . . . .	DWord	 00000025 _DATA	
+mainnumber . . . . . . . . . . .	DWord	 00000005 _DATA	
+mainsum  . . . . . . . . . . . .	DWord	 00000015 _DATA	
+mainsymb . . . . . . . . . . . .	Byte	 00000004 _DATA	
+
+	   0 Warnings
+	   0 Errors

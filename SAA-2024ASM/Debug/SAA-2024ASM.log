@@ -1,0 +1,25 @@
+﻿Сборка начата 03.01.2025 13:42:39.
+Уровень детализации журнала: Normal.     1>Проект "C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024ASM\SAA-2024ASM.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\SAA-2024ASM.tlog\unsuccessfulbuild".
+       _MASM:
+       Целевой объект "_MASM" пропускается, так как все выходные файлы актуальны по отношению к входным.
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024ASM.exe" /INCREMENTAL /ILK:"Debug\SAA-2024ASM.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024ASM.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024ASM.lib" /MACHINE:X86 "Debug\SAA-2024ASM.obj"
+     1>LINK : warning LNK4098: библиотека по умолчанию "libucrt.lib" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+         SAA-2024ASM.vcxproj -> C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024ASM.exe
+       FinalizeBuildStatus:
+         Файл "Debug\SAA-2024ASM.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\SAA-2024ASM.tlog\SAA-2024ASM.lastbuildstate".
+     1>Сборка проекта "C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024ASM\SAA-2024ASM.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+       "C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024ASM\SAA-2024ASM.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект Link) -> 
+         LINK : warning LNK4098: библиотека по умолчанию "libucrt.lib" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+
+    Предупреждений: 1
+    Ошибок: 0
+
+Прошло времени 00:00:01.10

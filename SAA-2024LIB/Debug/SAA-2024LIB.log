@@ -1,0 +1,26 @@
+﻿Сборка начата 18.12.2024 11:27:45.
+Уровень детализации журнала: Normal.     1>Проект "C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024LIB\SAA-2024LIB.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Создание "Debug\SAA-2024LIB.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "Debug\SAA-2024LIB.tlog\unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX86\x86\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Yc"pch.h" /Fp"Debug\SAA-2024LIB.pch" /Fo"Debug\\" /Fd"C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024LIB.pdb" /external:W3 /Gd /TP /analyze- /FC /errorReport:prompt pch.cpp
+         pch.cpp
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX86\x86\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Yu"pch.h" /Fp"Debug\SAA-2024LIB.pch" /Fo"Debug\\" /Fd"C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024LIB.pdb" /external:W3 /Gd /TP /analyze- /FC /errorReport:prompt "SAA-2024LIB.cpp"
+         SAA-2024LIB.cpp
+       Lib:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX86\x86\Lib.exe /OUT:"C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024LIB.lib" /NOLOGO /MACHINE:X86 Debug\pch.obj
+         "Debug\SAA-2024LIB.obj"
+         SAA-2024LIB.vcxproj -> C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024\Debug\SAA-2024LIB.lib
+       TlogCleanup:
+         Следующие элементы будут удалены из tlogs, так как они были удалены из проекта или сборки: C:\Users\Hasee\Desktop\кп\SAA-2024-master\SAA-2024-master\SAA-2024LIB\pch.cpp.
+       FinalizeBuildStatus:
+         Файл "Debug\SAA-2024LIB.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\SAA-2024LIB.tlog\SAA-2024LIB.lastbuildstate".
+     1>Сборка проекта "C:\Users\Hasee\Desktop\кп\SAA-2024\SAA-2024-master\SAA-2024-master\SAA-2024LIB\SAA-2024LIB.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+    Предупреждений: 0
+    Ошибок: 0
+
+Прошло времени 00:00:02.64

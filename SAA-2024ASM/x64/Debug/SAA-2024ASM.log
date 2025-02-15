@@ -1,0 +1,53 @@
+﻿Сборка начата 16.12.2024 14:58:28.
+Уровень детализации журнала: Normal.     1>Проект "C:\Users\Hasee\Desktop\кп\SAA-2024-master\SAA-2024-master\SAA-2024ASM\SAA-2024ASM.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "x64\Debug\SAA-2024ASM.tlog\unsuccessfulbuild".
+       _MASM:
+         Assembling SAA-2024ASM.asm...
+         cmd.exe /C "C:\Users\Hasee\AppData\Local\Temp\tmpe961df2654ca42a294d5e90a3230a0c8.cmd"
+         ml64.exe /c /nologo /Zi /Fo"x64\Debug\SAA-2024ASM.obj" /Fl"x64\Debug\\" /W3 /errorReport:prompt  /Ta"SAA-2024ASM.asm"
+     1>SAA-2024ASM.asm(1): error A2008: syntax error : .
+     1>SAA-2024ASM.asm(2): error A2008: syntax error : .
+     1>SAA-2024ASM.asm(17): error A2008: syntax error : .
+     1>SAA-2024ASM.asm(50): error A2008: syntax error : ebx
+     1>SAA-2024ASM.asm(52): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(53): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(62): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(64): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(65): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(67): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(68): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(72): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(73): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(74): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(76): error A2070: invalid instruction operands
+     1>SAA-2024ASM.asm(83): fatal error A1010: unmatched block nesting : $FindFactor
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"x64\Debug\SAA-2024ASM.obj" /Fl"x64\Debug\\" /W3 /errorReport:prompt  /Ta"SAA-2024ASM.asm"" с кодом "1".
+     1>Сборка проекта "C:\Users\Hasee\Desktop\кп\SAA-2024-master\SAA-2024-master\SAA-2024ASM\SAA-2024ASM.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+       "C:\Users\Hasee\Desktop\кп\SAA-2024-master\SAA-2024-master\SAA-2024ASM\SAA-2024ASM.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект _MASM) -> 
+         SAA-2024ASM.asm(1): error A2008: syntax error : .
+         SAA-2024ASM.asm(2): error A2008: syntax error : .
+         SAA-2024ASM.asm(17): error A2008: syntax error : .
+         SAA-2024ASM.asm(50): error A2008: syntax error : ebx
+         SAA-2024ASM.asm(52): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(53): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(62): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(64): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(65): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(67): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(68): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(72): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(73): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(74): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(76): error A2070: invalid instruction operands
+         SAA-2024ASM.asm(83): fatal error A1010: unmatched block nesting : $FindFactor
+         C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"x64\Debug\SAA-2024ASM.obj" /Fl"x64\Debug\\" /W3 /errorReport:prompt  /Ta"SAA-2024ASM.asm"" с кодом "1".
+
+    Предупреждений: 0
+    Ошибок: 17
+
+Прошло времени 00:00:00.36
